@@ -144,8 +144,12 @@
       $('#facebox .content').append(data)
       $('#facebox .loading').remove()
       $('#facebox .body').children().fadeIn('normal')
-      $('#facebox').css('left', $(window).width() / 2 - ($('#facebox table').width() / 2))
+      $.facebox.centralize();
       $(document).trigger('reveal.facebox').trigger('afterReveal.facebox')
+    },
+
+    centralize: function() {
+      $('#facebox').css('left', $(window).width() / 2 - ($('#facebox table').width() / 2))
     },
 
     close: function() {
